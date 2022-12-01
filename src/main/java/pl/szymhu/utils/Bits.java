@@ -1,4 +1,4 @@
-package pl.szmhu.utils;
+package pl.szymhu.utils;
 
 import lombok.EqualsAndHashCode;
 

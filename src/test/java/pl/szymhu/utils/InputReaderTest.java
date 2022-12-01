@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static pl.szmhu.utils.InputReader.*;
+import static pl.szymhu.utils.InputReader.*;
 
 class InputReaderTest {
 
@@ -37,5 +37,17 @@ class InputReaderTest {
 
         assertEquals(List.of("string1", "string2", "string3", "string4"), result);
     }
-}
 
+    @Test
+    void shouldReadEmptyLineSeparatedStringList() throws IOException {
+        var inputFileName = "strings-empty-line-list.txt";
+
+        var result = readEmptyLineSeparatedStringList(inputFileName, this.getClass());
+        var expected = List.of(
+                "One string part\nWith empty line next",
+                "Second string part\nWith empty line next",
+                "Last one");
+
+        assertEquals(expected, result);
+    }
+}

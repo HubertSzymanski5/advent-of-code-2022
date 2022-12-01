@@ -1,0 +1,7 @@
+One string part
+With empty line next
+
+Second string part
+With empty line next
+
+Last one

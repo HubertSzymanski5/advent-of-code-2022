@@ -1,10 +1,15 @@
-package pl.szmhu;
+package pl.szymhu;
 
+import pl.szymhu.day01.CalorieCounter;
+import pl.szymhu.utils.InputReader;
+
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        runAll();
+        runDay("01");
     }
 
     public static void runAll() {
@@ -27,5 +32,11 @@ public class Main {
             System.err.println("Method doesn't exist or failed to execute");
             e.printStackTrace();
         }
+    }
+
+    public static void day01() throws IOException {
+        List<String> input = InputReader.readEmptyLineSeparatedStringList("input.txt", CalorieCounter.class);
+        CalorieCounter calorieCounter = CalorieCounter.from(input);
+        System.out.println("Day01 I: " + calorieCounter.findMostCalories());
     }
 }

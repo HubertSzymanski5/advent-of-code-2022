@@ -1,7 +1,6 @@
 package pl.szymhu.utils;
 
 import org.junit.jupiter.api.Test;
-import pl.szmhu.utils.Bits;
 
 import java.util.List;
 

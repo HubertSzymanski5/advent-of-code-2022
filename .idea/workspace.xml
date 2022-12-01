@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71654453-4e24-4468-9c2d-eee686ea33f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/szmhu/utils/Bits.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/szmhu/utils/InputReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/BitsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/InputReaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/day01/CalorieCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/szymhu/day01/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/day01/CalorieCounterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/integers-comma-list.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/integers-list.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/string.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/strings-empty-line-list.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/strings-list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szmhu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szmhu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szmhu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szmhu/utils/Bits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/utils/Bits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szmhu/utils/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/utils/InputReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/BitsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/BitsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/InputReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/InputReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,14 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,15 +54,121 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/hubert/Dokumenty/Coding/advent-of-code-2022/src/test/java",
-    "nodejs_package_manager_path": "npm"
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/home/hubert/Dokumenty/Coding/advent-of-code-2022/src/test/resources",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/src/main/java/pl/szmhu" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/pl/szymhu" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.szmhu.day01" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.szymhu.Main" />
+      <module name="advent-of-code-2022.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.szymhu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalorieCounterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;pl.szmhu.day01.CalorieCounterTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="InputReaderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;pl.szymhu.utils.InputReaderTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="InputReaderTest.shouldReadIntegerList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;pl.szymhu.utils.InputReaderTest.shouldReadIntegerList&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.CalorieCounterTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.InputReaderTest" />
+        <item itemvalue="Gradle.InputReaderTest.shouldReadIntegerList" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -56,7 +178,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669909061714</updated>
-      <workItem from="1669909063371" duration="433000" />
+      <workItem from="1669909063371" duration="4182000" />
     </task>
     <servers />
   </component>

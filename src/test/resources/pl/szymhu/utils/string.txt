@@ -1,0 +1,6 @@
+This is example string to be read
+
+It contains empty line and some numbers as well.
+
+1234
+4321
