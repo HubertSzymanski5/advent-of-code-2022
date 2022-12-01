@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71654453-4e24-4468-9c2d-eee686ea33f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/day01/CalorieCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/szymhu/day01/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/day01/CalorieCounterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/integers-comma-list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/integers-list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/string.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/strings-empty-line-list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/pl/szymhu/utils/strings-list.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szmhu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szmhu/utils/Bits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/utils/Bits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szmhu/utils/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/utils/InputReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/BitsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/BitsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/InputReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/utils/InputReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szymhu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/szymhu/day01/CalorieCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/szymhu/day01/CalorieCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/szymhu/day01/CalorieCounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/szymhu/day01/CalorieCounterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +80,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalorieCounterTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;pl.szymhu.day01.CalorieCounterTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="CalorieCounterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -163,6 +174,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CalorieCounterTest (1)" />
         <item itemvalue="Gradle.CalorieCounterTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.InputReaderTest" />
@@ -178,7 +190,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669909061714</updated>
-      <workItem from="1669909063371" duration="4182000" />
+      <workItem from="1669909063371" duration="4501000" />
     </task>
     <servers />
   </component>

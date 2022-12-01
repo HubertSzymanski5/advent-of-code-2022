@@ -3,8 +3,10 @@ package pl.szymhu.day01;
 import lombok.AllArgsConstructor;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
+import static java.util.Comparator.reverseOrder;
 import static lombok.AccessLevel.PRIVATE;
 import static pl.szymhu.utils.InputReader.NEW_LINE;
 
@@ -17,6 +19,15 @@ public class CalorieCounter {
         return caloriesByElf.stream()
                 .map(this::sumCaloriesInBags)
                 .reduce(Integer::max)
+                .orElse(0);
+    }
+
+    public int findSumOfMost3Calories() {
+        return caloriesByElf.stream()
+                .map(this::sumCaloriesInBags)
+                .sorted(reverseOrder())
+                .limit(3)
+                .reduce(Integer::sum)
                 .orElse(0);
     }
 

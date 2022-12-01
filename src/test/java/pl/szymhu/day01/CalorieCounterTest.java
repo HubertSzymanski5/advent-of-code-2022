@@ -20,5 +20,6 @@ class CalorieCounterTest {
         var counter = CalorieCounter.from(input);
 
         assertEquals(24000, counter.findMostCalories());
+        assertEquals(45000, counter.findSumOfMost3Calories());
     }
 }

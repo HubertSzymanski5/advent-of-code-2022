@@ -38,5 +38,6 @@ public class Main {
         List<String> input = InputReader.readEmptyLineSeparatedStringList("input.txt", CalorieCounter.class);
         CalorieCounter calorieCounter = CalorieCounter.from(input);
         System.out.println("Day01 I: " + calorieCounter.findMostCalories());
+        System.out.println("Day01 I: " + calorieCounter.findSumOfMost3Calories());
     }
 }
