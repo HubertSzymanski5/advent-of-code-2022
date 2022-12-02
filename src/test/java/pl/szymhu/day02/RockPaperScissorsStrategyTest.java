@@ -15,8 +15,20 @@ class RockPaperScissorsStrategyTest {
                 new GamePicks('B', 'X'),
                 new GamePicks('C', 'Z'));
 
-        var game = new RockPaperScissorsGame(input, new FirstStrategy());
+        var game = new RockPaperScissorsGame(input, new PickStrategy());
 
         assertEquals(15, game.calculateTotalScore());
+    }
+
+    @Test
+    void shouldPassAdventOfCodeExamplePartII() {
+        var input = List.of(
+                new GamePicks('A', 'Y'),
+                new GamePicks('B', 'X'),
+                new GamePicks('C', 'Z'));
+
+        var game = new RockPaperScissorsGame(input, new OutcomeStrategy());
+
+        assertEquals(12, game.calculateTotalScore());
     }
 }

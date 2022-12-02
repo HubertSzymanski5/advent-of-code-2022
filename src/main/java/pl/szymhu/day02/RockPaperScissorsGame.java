@@ -1,6 +1,7 @@
 package pl.szymhu.day02;
 
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -8,6 +9,7 @@ import java.util.List;
 public class RockPaperScissorsGame {
 
     private List<GamePicks> gamePicksList;
+    @Setter
     private RockPaperScissorsStrategy strategy;
 
     public int calculateTotalScore() {

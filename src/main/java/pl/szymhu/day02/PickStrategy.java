@@ -4,7 +4,7 @@ import java.util.Map;
 
 import static pl.szymhu.day02.Pick.*;
 
-public class FirstStrategy implements RockPaperScissorsStrategy {
+public class PickStrategy implements RockPaperScissorsStrategy {
     private static final Map<Character, Pick> PICK_MAP = Map.of(
             'A', ROCK,
             'B', PAPER,
@@ -15,8 +15,8 @@ public class FirstStrategy implements RockPaperScissorsStrategy {
 
     @Override
     public int getScoresFrom(GamePicks gamePicks) {
-        Pick opponentPick = PICK_MAP.get(gamePicks.pick1());
-        Pick playerPick = PICK_MAP.get(gamePicks.pick2());
+        Pick opponentPick = PICK_MAP.get(gamePicks.opponentPick());
+        Pick playerPick = PICK_MAP.get(gamePicks.playerStrategy());
 
         return playerPick.getPoints() + playerPick.against(opponentPick).getPoints();
     }
