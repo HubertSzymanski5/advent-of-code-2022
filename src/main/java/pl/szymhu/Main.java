@@ -1,6 +1,10 @@
 package pl.szymhu;
 
 import pl.szymhu.day01.CalorieCounter;
+import pl.szymhu.day02.FirstStrategy;
+import pl.szymhu.day02.GamePicks;
+import pl.szymhu.day02.RockPaperScissorsGame;
+import pl.szymhu.day02.RockPaperScissorsStrategy;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -9,7 +13,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("01");
+        runDay("02");
     }
 
     public static void runAll() {
@@ -39,5 +43,15 @@ public class Main {
         CalorieCounter calorieCounter = CalorieCounter.from(input);
         System.out.println("Day01 I: " + calorieCounter.findMostCalories());
         System.out.println("Day01 I: " + calorieCounter.findSumOfMost3Calories());
+    }
+
+    public static void day02() throws IOException {
+        List<String> input = InputReader.readStringList("input.txt", RockPaperScissorsGame.class);
+        List<GamePicks> gamePicksList = input.stream()
+                .map(str -> new GamePicks(str.charAt(0), str.charAt(2)))
+                .toList();
+        RockPaperScissorsStrategy strategy = new FirstStrategy();
+        RockPaperScissorsGame game = new RockPaperScissorsGame(gamePicksList, strategy);
+        System.out.println("Day02 I: " + game.calculateTotalScore());
     }
 }
