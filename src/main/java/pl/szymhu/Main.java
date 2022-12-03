@@ -1,7 +1,11 @@
 package pl.szymhu;
 
 import pl.szymhu.day01.CalorieCounter;
-import pl.szymhu.day02.*;
+import pl.szymhu.day02.GamePicks;
+import pl.szymhu.day02.OutcomeStrategy;
+import pl.szymhu.day02.PickStrategy;
+import pl.szymhu.day02.RockPaperScissorsGame;
+import pl.szymhu.day03.RucksackReorganizer;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -10,7 +14,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("02");
+        runDay("03");
+    }
+
+    public static void day03() throws IOException {
+        List<String> input = InputReader.readStringList("input.txt", RucksackReorganizer.class);
+        RucksackReorganizer rucksackReorganizer = RucksackReorganizer.initialize(input);
+        System.out.println("Day03 I: " + rucksackReorganizer.getPrioritiesSum());
     }
 
     public static void day02() throws IOException {
@@ -44,6 +54,7 @@ public class Main {
                     }
                 });
     }
+
     public static void runDay(String numberStr) {
         try {
             var dayMethod = Main.class.getMethod("day" + numberStr);
