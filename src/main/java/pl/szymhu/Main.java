@@ -6,6 +6,7 @@ import pl.szymhu.day02.OutcomeStrategy;
 import pl.szymhu.day02.PickStrategy;
 import pl.szymhu.day02.RockPaperScissorsGame;
 import pl.szymhu.day03.RucksackReorganizer;
+import pl.szymhu.day04.CampCleaner;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -14,7 +15,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("03");
+        runDay("04");
+    }
+
+    public static void day04() throws IOException {
+        List<String> input = InputReader.readStringList("input.txt", CampCleaner.class);
+        CampCleaner campCleaner = CampCleaner.initialize(input);
+        System.out.println("Day04 I: " + campCleaner.getSumOfFullyContainedInTheOther());
     }
 
     public static void day03() throws IOException {
