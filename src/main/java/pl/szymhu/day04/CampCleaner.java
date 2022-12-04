@@ -17,6 +17,12 @@ public class CampCleaner {
                 .count();
     }
 
+    public long getSumOfOverlappingSectors() {
+        return pairs.stream()
+                .filter(ElvesPair::areOverlapping)
+                .count();
+    }
+
     public static CampCleaner initialize(List<String> pairs) {
         List<ElvesPair> elvesPairs = pairs.stream()
                 .map(ElvesPair::from)

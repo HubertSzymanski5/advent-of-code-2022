@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CampCleanerTest {
 
     @Test
-    void shouldPassAdventOfCodeExamplePartI() {
+    void shouldPassAdventOfCodeExample() {
         var input = List.of(
                 "2-4,6-8",
                 "2-3,4-5",
@@ -19,5 +19,6 @@ class CampCleanerTest {
                 "2-6,4-8");
         var cleaner = CampCleaner.initialize(input);
         assertEquals(2, cleaner.getSumOfFullyContainedInTheOther());
+        assertEquals(4, cleaner.getSumOfOverlappingSectors());
     }
 }

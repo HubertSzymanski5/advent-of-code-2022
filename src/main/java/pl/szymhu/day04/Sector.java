@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @AllArgsConstructor
 public class Sector {
@@ -13,6 +15,14 @@ public class Sector {
     public boolean contains(Sector other) {
         return this.start <= other.start
                 && this.end >= other.end;
+    }
+
+    public boolean overlaps(Sector other) {
+        return this.isWithinSector(other.start) || this.isWithinSector(other.end);
+    }
+
+    private boolean isWithinSector(int i) {
+        return this.start <= i && i <= this.end;
     }
 
     public static Sector from(String sector) {

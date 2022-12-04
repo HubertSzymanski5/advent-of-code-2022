@@ -22,6 +22,7 @@ public class Main {
         List<String> input = InputReader.readStringList("input.txt", CampCleaner.class);
         CampCleaner campCleaner = CampCleaner.initialize(input);
         System.out.println("Day04 I: " + campCleaner.getSumOfFullyContainedInTheOther());
+        System.out.println("Day04 II: " + campCleaner.getSumOfOverlappingSectors());
     }
 
     public static void day03() throws IOException {
