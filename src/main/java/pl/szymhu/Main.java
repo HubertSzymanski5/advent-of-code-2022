@@ -21,6 +21,7 @@ public class Main {
         List<String> input = InputReader.readStringList("input.txt", RucksackReorganizer.class);
         RucksackReorganizer rucksackReorganizer = RucksackReorganizer.initialize(input);
         System.out.println("Day03 I: " + rucksackReorganizer.getPrioritiesSum());
+        System.out.println("Day03 II: " + rucksackReorganizer.getBadgesPrioritiesSum());
     }
 
     public static void day02() throws IOException {
