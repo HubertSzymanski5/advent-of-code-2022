@@ -7,15 +7,28 @@ import pl.szymhu.day02.PickStrategy;
 import pl.szymhu.day02.RockPaperScissorsGame;
 import pl.szymhu.day03.RucksackReorganizer;
 import pl.szymhu.day04.CampCleaner;
+import pl.szymhu.day05.Crane;
+import pl.szymhu.day05.CraneMover9000;
+import pl.szymhu.day05.SupplyStacks;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import static pl.szymhu.utils.InputReader.NEW_LINE;
+
 public class Main {
     public static void main(String[] args) {
-        runDay("04");
+        runDay("05");
+    }
+
+    public static void day05() throws IOException {
+        List<String> input = InputReader.readEmptyLineSeparatedStringList("input.txt", SupplyStacks.class);
+        List<String> commands = Arrays.stream(input.get(1).split(NEW_LINE)).toList();
+        Crane crane = CraneMover9000.initialize(commands, input.get(0));
+        crane.executeCommands();
+        System.out.println("Day05 I: " + crane.getSupplyStacks().getCratesFromTheTopString());
     }
 
     public static void day04() throws IOException {
