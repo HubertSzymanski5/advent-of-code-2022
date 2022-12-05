@@ -9,6 +9,7 @@ import pl.szymhu.day03.RucksackReorganizer;
 import pl.szymhu.day04.CampCleaner;
 import pl.szymhu.day05.Crane;
 import pl.szymhu.day05.CraneMover9000;
+import pl.szymhu.day05.CraneMover9001;
 import pl.szymhu.day05.SupplyStacks;
 import pl.szymhu.utils.InputReader;
 
@@ -29,6 +30,10 @@ public class Main {
         Crane crane = CraneMover9000.initialize(commands, input.get(0));
         crane.executeCommands();
         System.out.println("Day05 I: " + crane.getSupplyStacks().getCratesFromTheTopString());
+        crane = CraneMover9001.initialize(commands, input.get(0));
+        crane.executeCommands();
+        System.out.println("Day05 II: " + crane.getSupplyStacks().getCratesFromTheTopString());
+
     }
 
     public static void day04() throws IOException {

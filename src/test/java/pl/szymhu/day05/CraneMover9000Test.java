@@ -25,10 +25,10 @@ class CraneMover9000Test {
         var crane = CraneMover9000.initialize(commands, stacks);
 
         var expected = List.of(
-                new CraneCommand(1,2,1),
-                new CraneCommand(3,1,3),
-                new CraneCommand(2,2,1),
-                new CraneCommand(1,1,2));
+                new CraneCommand(1, 2, 1),
+                new CraneCommand(3, 1, 3),
+                new CraneCommand(2, 2, 1),
+                new CraneCommand(1, 1, 2));
         assertEquals(expected, crane.getCommands());
     }
 
