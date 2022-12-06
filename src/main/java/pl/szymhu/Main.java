@@ -11,6 +11,7 @@ import pl.szymhu.day05.Crane;
 import pl.szymhu.day05.CraneMover9000;
 import pl.szymhu.day05.CraneMover9001;
 import pl.szymhu.day05.SupplyStacks;
+import pl.szymhu.day06.CommunicationSystemSignalProcessor;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -21,7 +22,13 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("05");
+        runDay("06");
+    }
+
+    public static void day06() throws IOException {
+        String input = InputReader.fileToString("input.txt", CommunicationSystemSignalProcessor.class);
+        System.out.println("Day06 I: " + CommunicationSystemSignalProcessor.getPacketStartIndex(input));
+        System.out.println("Day06 II: " + CommunicationSystemSignalProcessor.getMessageStartIndex(input));
     }
 
     public static void day05() throws IOException {
