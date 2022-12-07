@@ -12,6 +12,7 @@ import pl.szymhu.day05.CraneMover9000;
 import pl.szymhu.day05.CraneMover9001;
 import pl.szymhu.day05.SupplyStacks;
 import pl.szymhu.day06.CommunicationSystemSignalProcessor;
+import pl.szymhu.day07.FileSystem;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -22,7 +23,13 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("06");
+        runDay("07");
+    }
+
+    public static void day07() throws IOException {
+        List<String> input = InputReader.readStringList("input.txt", FileSystem.class);
+        FileSystem fileSystem = FileSystem.initialize(input);
+        System.out.println("Day07 I: " + fileSystem.getDirectoriesWithSizeLessThan(100000));
     }
 
     public static void day06() throws IOException {
