@@ -29,7 +29,8 @@ public class Main {
     public static void day07() throws IOException {
         List<String> input = InputReader.readStringList("input.txt", FileSystem.class);
         FileSystem fileSystem = FileSystem.initialize(input);
-        System.out.println("Day07 I: " + fileSystem.getDirectoriesWithSizeLessThan(100000));
+        System.out.println("Day07 I: " + fileSystem.getDirectoriesSumSizeWithSizeLessThan(100_000));
+        System.out.println("Day07 II: " + fileSystem.getDirectorySizeToDelete());
     }
 
     public static void day06() throws IOException {

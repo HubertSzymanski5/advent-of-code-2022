@@ -10,18 +10,31 @@ public class FileSystem {
     private static final String LS_COMMAND = "ls";
     private static final String CD_COMMAND = "cd";
 
+    private final int TOTAL_SPACE = 70_000_000;
+
     private final FileTree root;
 
     public String tree() {
         return root.toString();
     }
 
-    public int getDirectoriesWithSizeLessThan(int n) {
+    public int getDirectoriesSumSizeWithSizeLessThan(int n) {
         return root.getDirectories().stream()
                 .map(Directory::getSize)
                 .filter(size -> size <= n)
                 .reduce(Integer::sum)
                 .orElse(0);
+    }
+
+    public int getDirectorySizeToDelete() {
+        int requiredToUpdate = 30_000_000;
+        int freeSpace = TOTAL_SPACE - root.getSize();
+        int requiredSpace = requiredToUpdate - freeSpace;
+        return root.getDirectories().stream()
+                .map(Directory::getSize)
+                .filter(size -> size >= requiredSpace)
+                .reduce(Integer::min)
+                .orElseThrow();
     }
 
     public static FileSystem initialize(List<String> cmd) {

@@ -11,7 +11,7 @@ import java.util.List;
 public class Directory implements FileTree {
     private static final String PARENT = "..";
 
-    private final List<FileTree> subFiles = new ArrayList<>(); //TODO if List will work too slow update with Map<name, tree>
+    private final List<FileTree> subFiles = new ArrayList<>();
 
     @Getter
     private final String name;

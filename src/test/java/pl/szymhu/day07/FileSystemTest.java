@@ -32,7 +32,7 @@ class FileSystemTest {
     }
 
     @Test
-    void shouldPassAdventOfCodeExamplePartI() {
+    void shouldPassAdventOfCodeExample() {
         var input = Arrays.stream("""
                 $ cd /
                 $ ls
@@ -78,6 +78,7 @@ class FileSystemTest {
                 \t\tk (file, size=7214296)
                 """;
         assertEquals(expectedTree, fileSystem.tree());
-        assertEquals(95437, fileSystem.getDirectoriesWithSizeLessThan(100000));
+        assertEquals(95437, fileSystem.getDirectoriesSumSizeWithSizeLessThan(100_000));
+        assertEquals(24933642, fileSystem.getDirectorySizeToDelete());
     }
 }
