@@ -31,6 +31,7 @@ public class Main {
         String input = InputReader.fileToString("input.txt", Forrest.class);
         Forrest forrest = Forrest.initialize(input);
         System.out.println("Day08 I: " + forrest.countVisibleTrees());
+        System.out.println("Day08 II: " + forrest.findBestTreeScenicScore());
     }
 
     public static void day07() throws IOException {

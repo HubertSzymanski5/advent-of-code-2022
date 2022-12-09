@@ -3,7 +3,9 @@ package pl.szymhu.day08;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static pl.szymhu.utils.InputReader.NEW_LINE;
 
@@ -17,6 +19,51 @@ public class Forrest {
                 .flatMap(Arrays::stream)
                 .filter(Tree::isVisible)
                 .count();
+    }
+
+    public long findBestTreeScenicScore() {
+        List<Long> scenicScores = new ArrayList<>();
+        for (int i = 0; i < trees.length; i++) {
+            for (int j = 0; j < trees.length; j++) {
+                scenicScores.add(scenicScoreAt(i, j));
+            }
+        }
+        return scenicScores.stream()
+                .reduce(Long::max)
+                .orElse(0L);
+    }
+
+    private long scenicScoreAt(int x, int y) {
+        long right = 0, left = 0, up = 0, down = 0;
+        // right
+        for (int i = x + 1; i < trees.length; i++) {
+            right++;
+            if (trees[i][y].height >= trees[x][y].height) {
+                break;
+            }
+        }
+        // left
+        for (int i = x - 1; i >= 0; i--) {
+            left++;
+            if (trees[i][y].height >= trees[x][y].height) {
+                break;
+            }
+        }
+        // up
+        for (int i = y - 1; i >= 0; i--) {
+            up++;
+            if (trees[x][i].height >= trees[x][y].height) {
+                break;
+            }
+        }
+        // down
+        for (int i = y + 1; i < trees.length; i++) {
+            down++;
+            if (trees[x][i].height >= trees[x][y].height) {
+                break;
+            }
+        }
+        return right * left * up * down;
     }
 
     private void markVisible() {

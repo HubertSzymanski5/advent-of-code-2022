@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ForrestTest {
 
     @Test
-    void shouldPassAdventOfCodeExamplePartI() {
+    void shouldPassAdventOfCodeExample() {
         String input = """
                 30373
                 25512
@@ -27,5 +27,6 @@ class ForrestTest {
 
         assertEquals(expected, forrest.toString());
         assertEquals(21, forrest.countVisibleTrees());
+        assertEquals(8, forrest.findBestTreeScenicScore());
     }
 }
