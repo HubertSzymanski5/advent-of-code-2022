@@ -14,6 +14,7 @@ import pl.szymhu.day05.SupplyStacks;
 import pl.szymhu.day06.CommunicationSystemSignalProcessor;
 import pl.szymhu.day07.FileSystem;
 import pl.szymhu.day08.Forrest;
+import pl.szymhu.day09.RopeBridge;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -24,7 +25,14 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("08");
+        runDay("09");
+    }
+
+    public static void day09() throws IOException {
+        List<String> inputs = InputReader.readStringList("input.txt", RopeBridge.class);
+        RopeBridge ropeBridge = RopeBridge.initialize(inputs);
+        ropeBridge.executeCommands();
+        System.out.println("Day09 I: " + ropeBridge.getUniqueTailPositionsNum());
     }
 
     public static void day08() throws IOException {
