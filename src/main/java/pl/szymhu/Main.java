@@ -13,6 +13,7 @@ import pl.szymhu.day05.CraneMover9001;
 import pl.szymhu.day05.SupplyStacks;
 import pl.szymhu.day06.CommunicationSystemSignalProcessor;
 import pl.szymhu.day07.FileSystem;
+import pl.szymhu.day08.Forrest;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -23,7 +24,13 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("07");
+        runDay("08");
+    }
+
+    public static void day08() throws IOException {
+        String input = InputReader.fileToString("input.txt", Forrest.class);
+        Forrest forrest = Forrest.initialize(input);
+        System.out.println("Day08 I: " + forrest.countVisibleTrees());
     }
 
     public static void day07() throws IOException {
