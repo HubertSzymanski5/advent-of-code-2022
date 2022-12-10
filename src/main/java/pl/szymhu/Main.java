@@ -16,6 +16,7 @@ import pl.szymhu.day07.FileSystem;
 import pl.szymhu.day08.Forrest;
 import pl.szymhu.day09.RopeBridge;
 import pl.szymhu.day10.Cpu;
+import pl.szymhu.day10.Crt;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -33,6 +34,8 @@ public class Main {
         List<String> commands = InputReader.readStringList("input.txt", Cpu.class);
         Cpu cpu = Cpu.init(commands);
         System.out.println("Day10 I: " + cpu.getSumOfSignalStrengths());
+        Crt crt = Crt.init(commands);
+        System.out.println("Day10 II: " + crt.generate());
     }
 
     public static void day09() throws IOException {
