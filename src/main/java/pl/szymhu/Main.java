@@ -30,9 +30,12 @@ public class Main {
 
     public static void day09() throws IOException {
         List<String> inputs = InputReader.readStringList("input.txt", RopeBridge.class);
-        RopeBridge ropeBridge = RopeBridge.initialize(inputs);
+        RopeBridge ropeBridge = RopeBridge.initialize(inputs, 2);
         ropeBridge.executeCommands();
         System.out.println("Day09 I: " + ropeBridge.getUniqueTailPositionsNum());
+        ropeBridge = RopeBridge.initialize(inputs, 10);
+        ropeBridge.executeCommands();
+        System.out.println("Day09 II: " + ropeBridge.getUniqueTailPositionsNum());
     }
 
     public static void day08() throws IOException {

@@ -13,9 +13,7 @@ public class RopeBridge {
     @NonNull
     private List<Command> commands;
 
-    private Position head = new Position(0, 0);
-
-    private Position tail = new Position(0, 0);
+    private final List<Position> ropeElements = new ArrayList<>();
 
     private final List<Position> tailHistory = new ArrayList<>();
 
@@ -39,29 +37,35 @@ public class RopeBridge {
 
     private void moveHead(Command command) {
         switch (command.direction()) {
-            case U -> head = new Position(head.getX(), head.getY() + 1);
-            case D -> head = new Position(head.getX(), head.getY() - 1);
-            case L -> head = new Position(head.getX() - 1, head.getY());
-            case R -> head = new Position(head.getX() + 1, head.getY());
+            case U -> ropeElements.set(0, new Position(ropeElements.get(0).getX(), ropeElements.get(0).getY() + 1));
+            case D -> ropeElements.set(0, new Position(ropeElements.get(0).getX(), ropeElements.get(0).getY() - 1));
+            case L -> ropeElements.set(0, new Position(ropeElements.get(0).getX() - 1, ropeElements.get(0).getY()));
+            case R -> ropeElements.set(0, new Position(ropeElements.get(0).getX() + 1, ropeElements.get(0).getY()));
         }
     }
 
     private void moveTail() {
-        int dx = head.getX() - tail.getX();
-        int dy = head.getY() - tail.getY();
-        if (abs(dx) > 1 || abs(dy) > 1) {
-            int newX = dx != 0 ? tail.getX() + dx / abs(dx) : tail.getX();
-            int newY = dy != 0 ? tail.getY() + dy / abs(dy) : tail.getY();
-            tail = new Position(newX, newY);
+        for (int i = 1; i < ropeElements.size(); i++) {
+            int dx = ropeElements.get(i - 1).getX() - ropeElements.get(i).getX();
+            int dy = ropeElements.get(i - 1).getY() - ropeElements.get(i).getY();
+            if (abs(dx) > 1 || abs(dy) > 1) {
+                int newX = dx != 0 ? ropeElements.get(i).getX() + dx / abs(dx) : ropeElements.get(i).getX();
+                int newY = dy != 0 ? ropeElements.get(i).getY() + dy / abs(dy) : ropeElements.get(i).getY();
+                ropeElements.set(i, new Position(newX, newY));
+            }
         }
-        tailHistory.add(tail);
+        tailHistory.add(ropeElements.get(ropeElements.size() - 1));
     }
 
-    public static RopeBridge initialize(List<String> commands) {
+    public static RopeBridge initialize(List<String> commands, int ropeLength) {
         List<Command> commandList = commands.stream()
                 .map(Command::from)
                 .toList();
-        return new RopeBridge(commandList);
+        RopeBridge result = new RopeBridge(commandList);
+        for (int i = 0; i < ropeLength; i++) {
+            result.ropeElements.add(new Position(0, 0));
+        }
+        return result;
     }
 }
 

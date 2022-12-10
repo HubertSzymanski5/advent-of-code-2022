@@ -20,9 +20,27 @@ class RopeBridgeTest {
                 "L 5",
                 "R 2");
 
-        RopeBridge ropeBridge = RopeBridge.initialize(inputs);
+        RopeBridge ropeBridge = RopeBridge.initialize(inputs, 2);
         ropeBridge.executeCommands();
 
         assertEquals(13, ropeBridge.getUniqueTailPositionsNum());
+    }
+
+    @Test
+    void shouldPassAdventOfCodeExamplePartII() {
+        List<String> inputs = List.of(
+                "R 5",
+                "U 8",
+                "L 8",
+                "D 3",
+                "R 17",
+                "D 10",
+                "L 25",
+                "U 20");
+
+        RopeBridge ropeBridge = RopeBridge.initialize(inputs, 10);
+        ropeBridge.executeCommands();
+
+        assertEquals(36, ropeBridge.getUniqueTailPositionsNum());
     }
 }
