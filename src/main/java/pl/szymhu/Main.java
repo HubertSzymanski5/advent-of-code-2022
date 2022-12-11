@@ -17,6 +17,7 @@ import pl.szymhu.day08.Forrest;
 import pl.szymhu.day09.RopeBridge;
 import pl.szymhu.day10.Cpu;
 import pl.szymhu.day10.Crt;
+import pl.szymhu.day11.MonkeyGang;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -27,7 +28,13 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("10");
+        runDay("11");
+    }
+
+    public static void day11() throws IOException {
+        List<String> monkeys = InputReader.readEmptyLineSeparatedStringList("input.txt", MonkeyGang.class);
+        MonkeyGang monkeyGang = MonkeyGang.initialize(monkeys);
+        System.out.println("Day11 I: " + monkeyGang.findLevelOfMonkeyBusiness());
     }
 
     public static void day10() throws IOException {
