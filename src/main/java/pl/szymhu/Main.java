@@ -18,6 +18,7 @@ import pl.szymhu.day09.RopeBridge;
 import pl.szymhu.day10.Cpu;
 import pl.szymhu.day10.Crt;
 import pl.szymhu.day11.MonkeyGang;
+import pl.szymhu.day12.Hill;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -28,7 +29,13 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("11");
+        runDay("12");
+    }
+
+    public static void day12() throws IOException {
+        String map = InputReader.fileToString("input.txt", Hill.class);
+        Hill hill = Hill.initialize(map);
+        System.out.println("Day12 I: " + hill.getMinStepsToGetToEnd());
     }
 
     public static void day11() throws IOException {
