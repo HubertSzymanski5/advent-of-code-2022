@@ -33,8 +33,10 @@ public class Main {
 
     public static void day11() throws IOException {
         List<String> monkeys = InputReader.readEmptyLineSeparatedStringList("input.txt", MonkeyGang.class);
-        MonkeyGang monkeyGang = MonkeyGang.initialize(monkeys);
-        System.out.println("Day11 I: " + monkeyGang.findLevelOfMonkeyBusiness());
+        MonkeyGang monkeyGangBored = MonkeyGang.initialize(monkeys, true);
+        System.out.println("Day11 I: " + monkeyGangBored.findLevelOfMonkeyBusinessAfter(20));
+        MonkeyGang monkeyGang = MonkeyGang.initialize(monkeys, false);
+        System.out.println("Day11 II: " + monkeyGang.findLevelOfMonkeyBusinessAfter(10_000));
     }
 
     public static void day10() throws IOException {

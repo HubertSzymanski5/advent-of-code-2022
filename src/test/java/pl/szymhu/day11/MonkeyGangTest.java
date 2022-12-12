@@ -13,10 +13,20 @@ class MonkeyGangTest {
     void shouldPassAdventOfCodeExamplePartI() {
         var input = InputReader.readEmptyLineSeparatedStringList("example-input.txt", this.getClass());
 
-        MonkeyGang monkeyGang = MonkeyGang.initialize(input);
+        MonkeyGang monkeyGang = MonkeyGang.initialize(input, true);
         assertEquals(4, monkeyGang.getMonkeys().size());
 
-        assertEquals(10605, monkeyGang.findLevelOfMonkeyBusiness());
+        assertEquals(10605, monkeyGang.findLevelOfMonkeyBusinessAfter(20));
     }
 
+    @Test
+    @SneakyThrows
+    void shouldPassAdventOfCodeExamplePartII() {
+        var input = InputReader.readEmptyLineSeparatedStringList("example-input.txt", this.getClass());
+
+        MonkeyGang monkeyGang = MonkeyGang.initialize(input, false);
+        assertEquals(4, monkeyGang.getMonkeys().size());
+
+        assertEquals(2_713_310_158L, monkeyGang.findLevelOfMonkeyBusinessAfter(10_000));
+    }
 }
