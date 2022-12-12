@@ -16,20 +16,33 @@ public class Hill {
     private List<List<GridItem>> grid;
 
     public int getMinStepsToGetToEnd() {
-        return go();
-    }
-
-    int go() {
         GridItem start = grid.stream()
                 .flatMap(Collection::stream)
                 .filter(item -> item.getHeight() == 'S')
                 .findFirst()
                 .orElseThrow();
+        return go(start);
+    }
 
+    public int getMinStepsFromAnyASquare() {
+        List<GridItem> startingPoints = grid.stream()
+                .flatMap(Collection::stream)
+                .filter(i -> i.getHeight() == 'a')
+                .toList();
+        var otherAMin= startingPoints.stream()
+                .map(this::go)
+                .reduce(Integer::min)
+                .orElse(Integer.MAX_VALUE);
+        return Math.min(getMinStepsToGetToEnd(), otherAMin);
+    }
+
+    int go(GridItem start) {
+        grid.stream().flatMap(Collection::stream)
+                        .forEach(item -> item.setMinStepsToReach(null));
         start.setMinStepsToReach(0);
         Deque<GridItem> toVisit = new ArrayDeque<>(List.of(start));
         boolean hasFound = false;
-        while (!hasFound) {
+        while (!hasFound && !toVisit.isEmpty()) {
             GridItem currentlyProcessed = toVisit.pop();
             var newItems = currentlyProcessed.visit();
             hasFound = newItems.stream()
@@ -41,7 +54,7 @@ public class Hill {
                 .filter(i -> i.getHeight() == 'E')
                 .map(GridItem::getMinStepsToReach)
                 .findFirst()
-                .orElseThrow();
+                .orElse(Integer.MAX_VALUE);
     }
 
     public static Hill initialize(String stringGrid) {

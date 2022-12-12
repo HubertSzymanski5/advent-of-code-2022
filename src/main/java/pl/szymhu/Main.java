@@ -36,6 +36,7 @@ public class Main {
         String map = InputReader.fileToString("input.txt", Hill.class);
         Hill hill = Hill.initialize(map);
         System.out.println("Day12 I: " + hill.getMinStepsToGetToEnd());
+        System.out.println("Day12 I: " + hill.getMinStepsFromAnyASquare());
     }
 
     public static void day11() throws IOException {

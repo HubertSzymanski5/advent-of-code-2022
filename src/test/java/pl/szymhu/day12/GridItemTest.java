@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GridItemTest {
 
     @Test
-    void shouldPassAdventOfCodeExamplePartI() {
+    void shouldPassAdventOfCodeExample() {
         var input = """
                 Sabqponm
                 abcryxxl
@@ -20,6 +20,7 @@ class GridItemTest {
         Hill hill = Hill.initialize(input);
 
         assertEquals(31, hill.getMinStepsToGetToEnd());
+        assertEquals(29, hill.getMinStepsFromAnyASquare());
     }
 
 }
