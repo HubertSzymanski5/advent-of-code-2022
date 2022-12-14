@@ -19,6 +19,7 @@ import pl.szymhu.day10.Cpu;
 import pl.szymhu.day10.Crt;
 import pl.szymhu.day11.MonkeyGang;
 import pl.szymhu.day12.Hill;
+import pl.szymhu.day13.DistressSignal;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -29,14 +30,20 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("12");
+        runDay("13");
+    }
+
+    public static void day13() throws IOException {
+        List<String> signalPairs = InputReader.readEmptyLineSeparatedStringList("input.txt", DistressSignal.class);
+        DistressSignal distressSignal = DistressSignal.initialize(signalPairs);
+        System.out.println("Day13 I: " + distressSignal.getSumOfRightOrderedIndexes());
     }
 
     public static void day12() throws IOException {
         String map = InputReader.fileToString("input.txt", Hill.class);
         Hill hill = Hill.initialize(map);
         System.out.println("Day12 I: " + hill.getMinStepsToGetToEnd());
-        System.out.println("Day12 I: " + hill.getMinStepsFromAnyASquare());
+        System.out.println("Day12 II: " + hill.getMinStepsFromAnyASquare());
     }
 
     public static void day11() throws IOException {
@@ -113,9 +120,7 @@ public class Main {
 
     public static void day02() throws IOException {
         List<String> input = InputReader.readStringList("input.txt", RockPaperScissorsGame.class);
-        List<GamePicks> gamePicksList = input.stream()
-                .map(str -> new GamePicks(str.charAt(0), str.charAt(2)))
-                .toList();
+        List<GamePicks> gamePicksList = input.stream().map(str -> new GamePicks(str.charAt(0), str.charAt(2))).toList();
         RockPaperScissorsGame game = new RockPaperScissorsGame(gamePicksList, new PickStrategy());
         System.out.println("Day02 I: " + game.calculateTotalScore());
         game.setStrategy(new OutcomeStrategy());
@@ -131,16 +136,14 @@ public class Main {
     }
 
     public static void runAll() {
-        Arrays.stream(Main.class.getMethods())
-                .filter(method -> method.getName().startsWith("day"))
-                .forEach(method -> {
-                    try {
-                        method.invoke(new Object());
-                    } catch (Exception e) {
-                        System.err.println("Method '" + method.getName() + "' failed to execute");
-                        e.printStackTrace();
-                    }
-                });
+        Arrays.stream(Main.class.getMethods()).filter(method -> method.getName().startsWith("day")).forEach(method -> {
+            try {
+                method.invoke(new Object());
+            } catch (Exception e) {
+                System.err.println("Method '" + method.getName() + "' failed to execute");
+                e.printStackTrace();
+            }
+        });
     }
 
     public static void runDay(String numberStr) {
