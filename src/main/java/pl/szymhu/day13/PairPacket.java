@@ -4,13 +4,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.List;
 
 @AllArgsConstructor
+@Getter
 public class PairPacket {
 
-    private static final ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     private List<Object> left;
     private List<Object> right;
@@ -19,7 +21,7 @@ public class PairPacket {
         return compare(left, right) <= 0;
     }
 
-    private int compare(List<Object> first, List<Object> second) {
+    static int compare(List<Object> first, List<Object> second) {
         for (int i = 0; i < first.size() && i < second.size(); i++) {
             Object e1 = first.get(i);
             Object e2 = second.get(i);
@@ -41,8 +43,8 @@ public class PairPacket {
 
     public static PairPacket from(List<String> packets) {
         try {
-            return new PairPacket(objectMapper.readValue(packets.get(0), new TypeReference<>() {
-            }), objectMapper.readValue(packets.get(1), new TypeReference<>() {
+            return new PairPacket(OBJECT_MAPPER.readValue(packets.get(0), new TypeReference<>() {
+            }), OBJECT_MAPPER.readValue(packets.get(1), new TypeReference<>() {
             }));
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Cannot parse packets");

@@ -37,6 +37,7 @@ public class Main {
         List<String> signalPairs = InputReader.readEmptyLineSeparatedStringList("input.txt", DistressSignal.class);
         DistressSignal distressSignal = DistressSignal.initialize(signalPairs);
         System.out.println("Day13 I: " + distressSignal.getSumOfRightOrderedIndexes());
+        System.out.println("Day13 II: " + distressSignal.getDecoderKey());
     }
 
     public static void day12() throws IOException {

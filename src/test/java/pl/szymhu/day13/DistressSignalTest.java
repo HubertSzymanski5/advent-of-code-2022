@@ -20,6 +20,7 @@ class DistressSignalTest {
 
         assertIterableEquals(List.of(1, 2, 4, 6), signal.getIndexesOfPairsInRightOrder());
         assertEquals(13, signal.getSumOfRightOrderedIndexes());
+        assertEquals(140, signal.getDecoderKey());
     }
 
 }
