@@ -34,5 +34,7 @@ class BeaconZoneTest {
         assertEquals(BEACON, beaconZone.getMap().get(Point.of(-2L, 15L)));
         assertEquals(14, beaconZone.getSensorsDistances().size());
         assertEquals(26, beaconZone.findCountOfIllegalBeaconPosInRow(10L));
+        assertEquals(Point.of(14L, 11L), beaconZone.findLegalBaconPos(20));
+        assertEquals(56_000_011L, beaconZone.determineTuningFrequency(20L));
     }
 }

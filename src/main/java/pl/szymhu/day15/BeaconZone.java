@@ -16,6 +16,52 @@ public class BeaconZone {
     private Map<Point<Long>, Long> sensorsDistances;
 
     public long findCountOfIllegalBeaconPosInRow(Long row) {
+        Set<Point<Long>> excluded = getPointsExcludedFrom(row);
+        long beaconsAndSensorsInExcludedRow = getBeaconsAndSensorsInExcludedRow(excluded);
+        return excluded.size() - beaconsAndSensorsInExcludedRow;
+    }
+
+    public long determineTuningFrequency(long bound) {
+        Point<Long> pos = findLegalBaconPos(bound);
+        return pos.x() * 4_000_000L + pos.y();
+    }
+
+    Point<Long> findLegalBaconPos(long bound) {
+        return sensorsDistances.entrySet().stream()
+                .map(this::pointsAroundSensorDist)
+                .flatMap(Collection::stream)
+                .filter(point -> point.x() >= 0 && point.x() <= bound)
+                .filter(point -> point.y() >= 0 && point.y() <= bound)
+                .filter(this::isOnAvailablePos)
+                .findFirst()
+                .orElseThrow();
+    }
+
+    private Set<Point<Long>> pointsAroundSensorDist(Map.Entry<Point<Long>, Long> entry) {
+        Set<Point<Long>> result = new HashSet<>();
+        Point<Long> sensorPos = entry.getKey();
+        long distance = entry.getValue() + 1;
+        for (long dx = -distance; dx <= distance; dx++) {
+            result.add(Point.of(sensorPos.x() + dx, sensorPos.y() + distance - dx));
+            result.add(Point.of(sensorPos.x() + dx, sensorPos.y() - distance + dx));
+        }
+        return result;
+    }
+
+    private boolean isOnAvailablePos(Point<Long> point) {
+        return sensorsDistances.entrySet().stream()
+                .noneMatch(entry -> {
+                    var sensor = entry.getKey();
+                    var dist = distanceBetween(sensor, point);
+                    return dist <= entry.getValue();
+                });
+    }
+
+    private long getBeaconsAndSensorsInExcludedRow(Set<Point<Long>> excluded) {
+        return map.keySet().stream().filter(excluded::contains).count();
+    }
+
+    private Set<Point<Long>> getPointsExcludedFrom(Long row) {
         Set<Point<Long>> excluded = new HashSet<>();
         sensorsDistances.entrySet().stream().filter(entry -> Math.abs(entry.getKey().y() - row) <= entry.getValue()).forEach(entry -> {
             Long distanceToBeacon = entry.getValue();
@@ -25,8 +71,7 @@ public class BeaconZone {
                 excluded.add(Point.of(entry.getKey().x() - i, row));
             }
         });
-        long beaconsAndSensorsInExcludedRow = map.keySet().stream().filter(excluded::contains).count();
-        return excluded.size() - beaconsAndSensorsInExcludedRow;
+        return excluded;
     }
 
     public static BeaconZone initialize(List<String> input) {

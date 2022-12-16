@@ -39,6 +39,7 @@ public class Main {
         List<String> inputs = InputReader.readStringList("input.txt", BeaconZone.class);
         BeaconZone beaconZone = BeaconZone.initialize(inputs);
         System.out.println("Day15 I: " + beaconZone.findCountOfIllegalBeaconPosInRow(2_000_000L));
+        System.out.println("Day15 II: " + beaconZone.determineTuningFrequency(4_000_000L));
     }
 
     public static void day14() throws IOException {
