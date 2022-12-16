@@ -20,6 +20,7 @@ import pl.szymhu.day10.Crt;
 import pl.szymhu.day11.MonkeyGang;
 import pl.szymhu.day12.Hill;
 import pl.szymhu.day13.DistressSignal;
+import pl.szymhu.day14.SandVessel;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -30,7 +31,13 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("13");
+        runDay("14");
+    }
+
+    public static void day14() throws IOException {
+        List<String> rocks = InputReader.readStringList("input.txt", SandVessel.class);
+        SandVessel sandVessel = SandVessel.initialize(rocks);
+        System.out.println("Day14 I: " + sandVessel.pourSand());
     }
 
     public static void day13() throws IOException {
