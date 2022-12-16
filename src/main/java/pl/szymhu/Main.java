@@ -21,6 +21,7 @@ import pl.szymhu.day11.MonkeyGang;
 import pl.szymhu.day12.Hill;
 import pl.szymhu.day13.DistressSignal;
 import pl.szymhu.day14.SandVessel;
+import pl.szymhu.day15.BeaconZone;
 import pl.szymhu.utils.InputReader;
 
 import java.io.IOException;
@@ -31,7 +32,13 @@ import static pl.szymhu.utils.InputReader.NEW_LINE;
 
 public class Main {
     public static void main(String[] args) {
-        runDay("14");
+        runDay("15");
+    }
+
+    public static void day15() throws IOException {
+        List<String> inputs = InputReader.readStringList("input.txt", BeaconZone.class);
+        BeaconZone beaconZone = BeaconZone.initialize(inputs);
+        System.out.println("Day15 I: " + beaconZone.findCountOfIllegalBeaconPosInRow(2_000_000L));
     }
 
     public static void day14() throws IOException {
