@@ -38,6 +38,8 @@ public class Main {
         List<String> rocks = InputReader.readStringList("input.txt", SandVessel.class);
         SandVessel sandVessel = SandVessel.initialize(rocks);
         System.out.println("Day14 I: " + sandVessel.pourSand());
+        sandVessel.addFloor();
+        System.out.println("Day14 II: " + sandVessel.pourSand());
     }
 
     public static void day13() throws IOException {

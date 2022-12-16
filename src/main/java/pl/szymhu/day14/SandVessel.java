@@ -1,26 +1,35 @@
 package pl.szymhu.day14;
 
-import lombok.AllArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SandVessel {
 
+    @NonNull
     private char[][] view;
+    private int sandCount = 0;
 
     public int pourSand() {
-        int count = 0;
         while (addSand()) {
-            count++;
+            sandCount++;
         }
-        return count;
+        return sandCount;
+    }
+
+    public void addFloor() {
+        addRock(List.of(List.of(0, view[0].length - 1), List.of(view.length - 1, view[0].length - 1)));
     }
 
     boolean addSand() {
         int[] pos = {500, 0};
+        if (view[pos[0]][pos[1]] != '.') {
+            return false;
+        }
         while (pos[0] < view.length - 1 && pos[1] < view[0].length - 1) {
             if (view[pos[0]][pos[1] + 1] == '.') {
                 pos[1]++;
@@ -77,7 +86,7 @@ public class SandVessel {
             maxSize[0] = Math.max(maxSize[0], point.get(0));
             maxSize[1] = Math.max(maxSize[1], point.get(1));
         });
-        char[][] view = new char[maxSize[0] + 2][maxSize[1] + 2];
+        char[][] view = new char[maxSize[0] + maxSize[1] + 1][maxSize[1] + 3];
         for (char[] chars : view) {
             Arrays.fill(chars, '.');
         }
@@ -92,9 +101,5 @@ public class SandVessel {
 
     private static List<Integer> stringToPoint(String stringPoint) {
         return Arrays.stream(stringPoint.split(",")).map(Integer::parseInt).toList();
-    }
-
-    private static void addRockToView() {
-
     }
 }
